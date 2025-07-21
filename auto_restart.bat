@@ -3,11 +3,15 @@ REM Auto Restart Script - Executes after a delay
 REM Author: Auto-generated
 REM Created on: July 21, 2025
 
-echo The system will automatically restart in 3 minutes...
+REM === Configuration ===
+set "WAIT_SECONDS=30"
+REM =====================
+
+echo The system will automatically restart in %WAIT_SECONDS% seconds...
 echo Start time: %date% %time% >> C:\Windows\Temp\auto_restart_log.txt
 
-REM Wait for 180 seconds (3 minutes)
-timeout /t 180 /nobreak
+REM Wait for the specified number of seconds
+timeout /t %WAIT_SECONDS% /nobreak
 
 REM Log the restart time
 echo Restart time: %date% %time% >> C:\Windows\Temp\auto_restart_log.txt
