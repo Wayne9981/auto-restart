@@ -18,3 +18,5 @@ echo Restart time: %date% %time% >> C:\Windows\Temp\auto_restart_log.txt
 
 REM Execute the restart command
 shutdown /r /t 0 /c "Auto restart script executed"
+
+pause
