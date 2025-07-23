@@ -69,10 +69,11 @@ echo If you wish to cancel, press Ctrl+C during the countdown.
 echo.
 
 REM Countdown
+for /f %%a in ('powershell "[char]13"') do set "R=%%a"
 for /L %%i in (%COUNTDOWN_SECONDS%,-1,1) do (
     set /a minutes=%%i/60
     set /a seconds=%%i%%60
-    echo Remaining time: !minutes! min !seconds! sec
+    set /p="Remaining time: !minutes! min !seconds! sec   !R!" <nul
     timeout /t 1 /nobreak >nul
 )
 
