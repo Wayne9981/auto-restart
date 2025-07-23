@@ -46,6 +46,23 @@ if %MAX_RESTART_COUNT% gtr 0 (
         echo Maximum restart count has been reached.
         echo Current restart count: !restart_count!
         echo Script will now exit to prevent infinite restart loop.
+        echo.
+        echo ========================================
+        echo            Reset Instructions
+        echo ========================================
+        echo To reset the restart counter, you can:
+        echo Delete the count file: del "%COUNT_FILE%"
+        echo.
+        echo To remove this script completely:
+        echo 1. Delete the script file: del "%~f0"
+        echo 2. Delete the log file: del "%LOG_FILE%"
+        echo 3. Delete the count file: del "%COUNT_FILE%"
+        echo 4. Check and remove from Windows Task Scheduler if installed:
+        echo    - Open "Task Scheduler" (taskschd.msc)
+        echo    - Look for tasks related to this script
+        echo    - Delete any auto-restart related tasks
+        echo.
+        echo Press any key to exit...
         echo [%date% %time%] Max restart limit reached >> "%LOG_FILE%"
         pause
         exit /b 0
