@@ -34,8 +34,7 @@ if %MAX_RESTART_COUNT% gtr 0 (
         echo ========================================
         echo      Maximum Restart Limit Reached
         echo ========================================
-        echo Maximum restart count has been reached.
-        echo Current restart count: !restart_count!
+        echo Maximum restart count %MAX_RESTART_COUNT% has been reached.
         echo Script will now exit to prevent infinite restart loop.
         echo.
         echo ========================================
@@ -54,7 +53,7 @@ if %MAX_RESTART_COUNT% gtr 0 (
         echo    - Delete any auto-restart related tasks
         echo.
         echo Press any key to exit...
-        echo [%date% %time%] Max restart limit reached >> "%LOG_FILE%"
+        echo [%date% %time%] Max restart limit reached: %MAX_RESTART_COUNT% >> "%LOG_FILE%"
         pause
         exit /b 0
     )
