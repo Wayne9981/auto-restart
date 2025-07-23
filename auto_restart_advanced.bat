@@ -62,7 +62,9 @@ if %MAX_RESTART_COUNT% gtr 0 (
     echo Current restart count: !restart_count! ^(no limit^)
 )
 echo.
-echo The system will automatically restart in %COUNTDOWN_SECONDS%/60 minutes %COUNTDOWN_SECONDS%%%60 seconds.
+set /a c_min=%COUNTDOWN_SECONDS%/60
+set /a c_sec=%COUNTDOWN_SECONDS%%%60
+echo The system will automatically restart in %c_min% minutes %c_sec% seconds.
 echo If you wish to cancel, press Ctrl+C during the countdown.
 echo.
 
