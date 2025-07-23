@@ -43,10 +43,10 @@ if %MAX_RESTART_COUNT% gtr 0 (
         echo ========================================
         echo      Maximum Restart Limit Reached
         echo ========================================
-        echo Maximum restart count (%MAX_RESTART_COUNT%) has been reached.
+        echo Maximum restart count has been reached.
         echo Current restart count: !restart_count!
         echo Script will now exit to prevent infinite restart loop.
-        echo [%date% %time%] Max restart limit reached: !restart_count! >> "%LOG_FILE%"
+        echo [%date% %time%] Max restart limit reached >> "%LOG_FILE%"
         pause
         exit /b 0
     )
@@ -81,7 +81,6 @@ echo.
 echo Preparing to restart...
 
 REM Log Restart Time
-echo [%date% %time%] Restart count: !restart_count!
 echo [%date% %time%] Restart count: !restart_count! >> "%LOG_FILE%"
 echo !restart_count! > "%COUNT_FILE%"
 
