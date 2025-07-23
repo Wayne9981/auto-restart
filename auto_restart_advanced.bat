@@ -12,20 +12,11 @@ REM           Configuration Block
 REM ========================================
 set "COUNT_FILE=C:\Windows\Temp\auto_restart_count.txt"
 set "LOG_FILE=C:\Windows\Temp\auto_restart_log.txt"
-set "COUNTDOWN_SECONDS=180"
+set "COUNTDOWN_SECONDS=10"
 set "SHUTDOWN_DELAY_SECONDS=5"
 REM MAX_RESTART_COUNT: Maximum number of restarts allowed (set to 0 for unlimited)
-set "MAX_RESTART_COUNT=10"
+set "MAX_RESTART_COUNT=3"
 REM ========================================
-
-REM Check Administrator Privileges
-net session >nul 2>&1
-if %errorLevel% neq 0 (
-    echo This script requires administrator privileges to perform restart operations.
-    echo Please run this script as an administrator.
-    pause
-    exit /b 1
-)
 
 REM Initialize restart count
 if not exist "%COUNT_FILE%" (
