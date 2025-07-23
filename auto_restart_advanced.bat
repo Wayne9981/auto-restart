@@ -29,13 +29,6 @@ set /p restart_count=<"%restart_count_log%"
 set /a restart_count=!restart_count! + 1
 echo !restart_count! > "%restart_count_log%"
 
-REM Log Start Time
-set start_time=%date% %time%
-echo Restart Execution Time：!start_time!
-echo Restart Execution Time：!start_time! >> C:\Windows\Temp\auto_restart_log.txt
-echo This is the !restart_count! time restart。 >> C:\Windows\Temp\auto_restart_log.txt
-
-
 echo.
 echo ========================================
 echo        Automatic Restart Script
@@ -59,8 +52,7 @@ echo Preparing to restart...
 REM Log Restart Time
 set restart_time=%date% %time%
 echo Restart Execution Time：!restart_time!
-echo Restart Execution Time：!restart_time! >> C:\Windows\Temp\auto_restart_log.txt
-echo This is the !restart_count! time restart。 >> C:\Windows\Temp\auto_restart_log.txt
+echo [!restart_time!] Restart count: !restart_count! >> C:\Windows\Temp\auto_restart_log.txt
 
 
 REM Execute Restart
