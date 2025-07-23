@@ -49,7 +49,7 @@ if %MAX_RESTART_COUNT% gtr 0 (
         echo 2. Delete the log file: del "%LOG_FILE%"
         echo 3. Delete the count file: del "%COUNT_FILE%"
         echo 4. Check and remove from Windows Task Scheduler if installed:
-        echo    - Open "Task Scheduler" (taskschd.msc)
+        echo    - Open "Task Scheduler" ^(taskschd.msc^)
         echo    - Look for tasks related to this script
         echo    - Delete any auto-restart related tasks
         echo.
