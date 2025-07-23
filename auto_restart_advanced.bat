@@ -52,8 +52,6 @@ if %MAX_RESTART_COUNT% gtr 0 (
     )
 )
 
-echo !restart_count! > "%COUNT_FILE%"
-
 echo.
 echo ========================================
 echo        Automatic Restart Script
@@ -82,6 +80,7 @@ echo Preparing to restart...
 REM Log Restart Time
 echo [%date% %time%] Restart count: !restart_count!
 echo [%date% %time%] Restart count: !restart_count! >> "%LOG_FILE%"
+echo !restart_count! > "%COUNT_FILE%"
 
 REM Execute Restart
 shutdown /r /t %SHUTDOWN_DELAY_SECONDS% /c "Automatic Restart Script - The system will restart in %SHUTDOWN_DELAY_SECONDS% seconds."
